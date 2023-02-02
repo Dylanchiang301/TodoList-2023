@@ -1,38 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.body {
+  background-image: linear-gradient(
+    to bottom,
+    #d7e9fc 0%,
+    #b6bef0 100%
+  );
+  width: 100vw;
+  height: 100vw;
+  /* background-size: 100% 100%; */
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  /* width: 520px;
+  min-height: 700px;
+  background: #26272d; */
+  text-align: center;
+  /* margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px; */
+}
+
+h1 {
+  margin: 100px 100px 5px 100px;
+  color: rgb(74, 130, 194);
+  text-align: start;
+  font-size: 48px;
+}
+h4{
+  margin: 5px 100px;
+  color: rgb(143, 178, 210);
+  text-align: start;
+  font-size: 32px;
+}
+
+hr {
+  border: 10px;
+  margin: 10px 100px;
+  height: 0.4em;
+  border-radius: 10px;
+  background-color:rgb(184, 188, 184);
+}
+
+.text{
+  margin: 5px 100px;
+  color: rgb(143, 178, 210);
+  text-align: start;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.2;
+}
+
+.todo-form {
+  display: flex;
+  margin: 15px 100px;
+  flex-wrap: wrap;
+}
+
+.todo-input {
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-start;
+  font-size: 18px;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  width: 88%;
+  background: #fff;
+  outline: none;
+  color: rgb(143, 178, 210);
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-btn{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 8px;
+  border: none;
+  border-radius:4px;
+  cursor: pointer;
+  outline: none;
+  width: 12%;
+  background:  rgb(74, 130, 194);
+  color: #fff;
+  text-transform: capitalize;
+}
+.todo-plusbtn{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  font-size: 24px; 
+  border: none;
+  background-color: rgb(74, 130, 194);
+  color: #fff; 
+}
+
+.todo-input.edit {
+  border: 2px solid #149fff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 4px 100px;
+  color: rgb(74, 130, 194);
+  background:white;
+  padding: 16px;
+  border-radius: 5px;
+  border-left: 10px solid rgb(74, 130, 194);
+}
+.todo-checkbox input[type='checkbox']:checked ~ p{
+  text-decoration: line-through 3px solid rgb(74, 130, 194);
+
+}
+
+.todo-checkbox {
+  display: flex;
+  align-items: center;
+}
+.todo-checkbox label{
+  cursor: pointer;
+  display: flex;
+}
+.todo-checkbox input[type='checkbox'] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+.todo-checkbox label::before {
+  content:'';
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  margin-right: 0.4rem;
+  border: 0.1rem solid rgb(92, 88, 88);
+}
+.todo-checkbox label:hover::before,
+.todo-checkbox input[type='checkbox']:hover + label::before {
+  background-color:rgb(152, 150, 239);
+}
+.todo-checkbox input[type='checkbox']:checked + label::before {
+  content:'\002714';
+  background-color: rgb(74, 130, 194);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  border: rgb(170, 211, 218) solid 1px;
+  background-color: rgb(170, 211, 218);
+  color: rgb(74, 130, 194);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-btn {
+  border:rgb(170, 211, 218) solid 1px;
+  border-radius: 4px;
+  margin-left: 3px;
+}
+
+.edit-btn {
+  border:rgb(170, 211, 218) solid 1px;
+  border-radius: 4px;
 }
